@@ -17,7 +17,8 @@
     float: right;
     width: 20%;
     height: 100px;
-    background-color: antiquewhite;/*#191e23;*/
+    background-color: #191e23;
+    height: calc(100vh - 94px);
 }
 
 .content_block {
@@ -25,6 +26,19 @@
     height: 100px;
     width: 62%;
     background-color: aquamarine;/* #ffffff;*/
+    height: calc(100vh - 94px);
+}
+
+.content_block .top_pictures_bar {
+    height: 240px;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+.content_block .content {
+    height: calc(100vh - 334px);
+    width: 100%;
+    background-color: blue;
 }
 
 .top_menu_bar {
@@ -33,7 +47,7 @@
     left: 18%;
     width: 62%;
     height: 62px;
-    background-color: beige;
+    background-color: #ffffff;
 }
 
 .profile_menu_bar {
