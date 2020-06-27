@@ -33,12 +33,15 @@
     height: 240px;
     width: 100%;
     background-color: antiquewhite;
+    background-image: url(../img/content_testing.jpg);
+    background-size: 100%;
 }
 
 .content_block .content {
     height: calc(100vh - 334px);
     width: 100%;
-    background-color: blue;
+    background-color: #ffffff;
+    color: #8c8c8c;
 }
 
 .top_menu_bar {
@@ -52,7 +55,7 @@
 
 .profile_menu_bar {
     overflow: hidden;
-    background-color: blueviolet;
+    background-color: #ffffff;
     height: 62px;
 }
 
@@ -60,7 +63,13 @@
     overflow: hidden;
     width: 100%;
     height: 20px;
-    background-color: brown;
+    background-color: #7fb1b4;
+}
+
+/* Отключение стилей для ссылок */
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
 /* Стилизация текста левого меню */
@@ -68,22 +77,19 @@
     color: #37434b;
 }
 
-/* Стилизация списков */
-.left_side_menu, .profile_menu, .profile_photo, .profile {
+/* Стилизация списков левого меню */
+.left_side_menu, .dropdown_profile_menu, .profile_photo, .profile {
     list-style-type: none;
 }
 
-.profile_menu > li > img {
-    width: 50px;
-    height: 50px;
-}
-
 /* Стилизация логотипа левого бара */
-.logo > img {
-    padding-top: 30px;
-    padding-left: 102px;
+.logo img {
+    display: block;
+    margin-top: 22px;
+    margin-left: auto;
+    margin-right: auto;
     height: 65px;
-    padding-bottom: 25px;
+    margin-bottom: 25px;
 }
 
 /* Стилизация блоков переходов левого меню */
@@ -103,24 +109,44 @@
 }
 
 /* Стилизация меню профиля топ бара */
-.user_profile > img {
-    height: 27px;
-    width: 27px;
+.user_profile {
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 330%;
+    color: #d9d9d9;
+    border-right: 2px solid #d9d9d9;
 }
 
-.user_profile {
-    float: right;
+.user_profile > img {
+    float: left;
+    margin-left: 30px;
+    margin-top: 10px;
+    height: 27px;
+    width: 27px;
+    border: 2px solid #000;
+    border-radius: 40px;
 }
 
 /* Выпадающий список */
 .dropdown_profile_menu {
-    position: absolute;
-    left: 80%;
-    background-color: coral;
-    z-index: 1;
-    display: inline;
+    margin-top: -12px;
+    display: none;
 }
 
-.dropdown_profile_menu > ul {
-    display: none;
+.user_profile:hover .dropdown_profile_menu {
+    position: absolute;
+    display: block;
+    margin-left: 30px;
+    padding-bottom: 1px;
+    background-color: #fff;
+    color: #000;
+    line-height: 200%;
+    text-indent: 15px;
+}
+
+.dropdown_profile_menu li:hover {
+    box-shadow: -5px 0px 0px 0px #329ea5;
+    background-color: #3bb4bc;
+    color: #ffffff;
 }
