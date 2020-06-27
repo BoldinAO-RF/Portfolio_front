@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css"> </head>
 
 <body>
+   <div class="container">
+   <!-- Левое боковое меню -->
     <div class="left_side_window">
-        <!-- Левое боковое меню --><img src="img/logoLeftBar.png" alt="Portfolio">
-        <ul class="left_side_menu">
+        <div class="logo">
+            <img src="img/logoLeftBar.png" alt="Portfolio"> 
+        </div>
+        <div class="left_side_menu">
             <li>Обо мне</li>
             <li>Проекты</li>
             <li>Навыки</li>
             <li>Контакты</li>
+        </div>
+    </div>
+    <div class="top_menu_bar"></div>
+    <div class="profile_menu_bar">
+        <div class="user_profile">
+            <img src="img/logoProfileMan.png">
+            <div class="dropdown_profile_menu">
+        <ul>
+            <li>Вход</li>
+            <li>Регистрация</li>
+            <li>Профиль</li>
+            <li>Выход</li>
         </ul>
     </div>
-    <div class="top_menu_bar">
-        <div class="user_profile">
-            <!-- Выпадающее меню верхнего бара -->
-            <ul class="profile_menu">
-                <li><img src="img/logoProfileMan.png">
-                    <ul class="profile_photo">
-                        <li>Вход</li>
-                        <li><a href="pages/registration.html">Регистрация</a></li>
-                        <li>Выход</li>
-                        <li>Профиль</li>
-                    </ul>
-                </li>
-            </ul>
         </div>
     </div>
     <div class="content_block">
@@ -36,5 +40,7 @@
     </div>
     <div class="right_bar"></div>
     <div class="footer"></div>
+    </div>
 </body>
+
 </html>
