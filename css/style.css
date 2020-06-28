@@ -138,12 +138,7 @@ a {
 
 /* Выпадающий список меню профиля */
 .dropdown_profile_menu {
-    width: 120px;
     visibility: hidden;
-    
-    transition-property: opacity, visibility;
-    transition-duration: 1.3s;
-    transition-delay: 0.1s;
 }
 
 .user_profile:hover .dropdown_profile_menu {
