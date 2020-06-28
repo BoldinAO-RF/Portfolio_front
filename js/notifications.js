@@ -1,7 +1,10 @@
-document.getElementById('1').onclick = function () {
-    if(getComputedStyle(document.getElementById('2')).visibility === "hidden"){
-        document.getElementById('2').style.visibility = 'visible';
+let elNotificationContent = document.getElementById("notifications_content");
+let elNotification = document.getElementById("notifications");
+
+elNotification.onclick = function () {
+    if(getComputedStyle(elNotificationContent).visibility === "hidden"){
+        elNotificationContent.style.visibility = 'visible';
     } else {
-        document.getElementById('2').style.visibility = 'hidden';
+        elNotificationContent.style.visibility = 'hidden';
     }        
 };

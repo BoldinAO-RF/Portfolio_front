@@ -3,6 +3,15 @@
     padding: 0;
 }
 
+/* Стилизация скроллов */
+::-webkit-scrollbar { width: 8px; height: 3px;}
+::-webkit-scrollbar-button {  background-color: #666; }
+::-webkit-scrollbar-track {  background-color: #999;}
+::-webkit-scrollbar-track-piece { background-color: #3bb4bc;}
+::-webkit-scrollbar-thumb { height: 50px; background-color: #666; border-radius: 3px;}
+::-webkit-scrollbar-corner { background-color: #999;}}
+::-webkit-resizer { background-color: #666;}
+
 /* Настройка основных блоков */
 .container{
     max-width: 1480px;
@@ -10,7 +19,7 @@
     margin: 0 auto;
 }
 
-.left_side_window {
+#left_side_window {
     float: left;
     background-color: #0e1214;
     width: 14.48%;
@@ -19,7 +28,7 @@
     border-top: 8px solid #3bb4bc;
 }
 
-.top_menu_bar {
+#top_menu_bar {
     overflow: hidden;
     float: left;
     width: 65%;
@@ -27,20 +36,20 @@
     background-color: #ffffff;
 }
 
-.profile_menu_bar {
+#profile_menu_bar {
     overflow: hidden;
     width: 20.52%;
     background-color: #ffffff;
     min-height: 62px;
 }
 
-.content_block {
+#content_block {
     float: left;
     width: 65%;
     background-color: ffffff;
 }
 
-.content_block .top_pictures_bar {
+#content_block #top_pictures_bar {
     height: 240px;
     width: 100%;
     background-color: antiquewhite;
@@ -48,7 +57,7 @@
     background-size: 100%;
 }
 
-.content_block .content {
+#content_block #content {
     overflow: scroll;
     overflow-x: hidden;
     min-height: 106px;
@@ -58,16 +67,16 @@
     color: #8c8c8c;
 }
 
-.right_bar {
+#right_bar {
     float: right;
     position: relative;
     width: 20.52%;
-    background-color: #191e23;
+    background-color: #0e1214;
     min-height: 346px;
     height: calc(100vh - 94px);
 }
 
-.footer {
+#footer {
     overflow: hidden;
     width: 100%;
     height: 20px;
@@ -81,30 +90,30 @@ a {
 }
 
 /* Стилизация текста левого меню */
-.left_side_window {
+#left_side_window {
     color: #37434b;
 }
 
 /* Стилизация списков левого меню */
-.left_side_menu, .dropdown_profile_menu, .profile_photo, .profile {
+#left_side_menu, #dropdown_profile_menu, #profile_photo, #profile {
     list-style-type: none;
 }
 
 /* Стилизация логотипа левого бара */
-.logo {
+#logo {
     margin-top: 22px;
     width: 87.5px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
 }
-.logo img {
+#logo img {
     display: block;
     height: 65px;
 }
 
 /* Стилизация блоков переходов левого меню */
-.left_side_menu li {
+#left_side_menu li {
     margin-left: 6px;
     padding-bottom: 1px;
     background-color: #191e23;
@@ -113,14 +122,14 @@ a {
     text-indent: 36px;
 }
 
-.left_side_menu li:hover {
+#left_side_menu li:hover {
     box-shadow: -5px 0px 0px 0px #329ea5;
     background-color: #3bb4bc;
     color: #ffffff;
 }
 
 /* Стилизация меню профиля топ бара */
-.user_profile {
+#user_profile {
     position: absolute;
     margin-top: 16px;
     margin-left: 30px;
@@ -133,7 +142,7 @@ a {
     box-shadow: 2px 0 0 0 #ebebeb;
 }
 
-.user_profile > img {
+#user_profile > img {
     float: left;
     margin-right: 15px;
     height: 27px;
@@ -143,32 +152,48 @@ a {
 }
 
 /* Выпадающий список меню профиля */
-.dropdown_profile_menu {
+#dropdown_profile_menu {
     position: absolute;
     z-index: 1;
     width: calc(100% - 22px);
     visibility: hidden;
-    margin-top: -1px;
+    margin-top: 10px;
     background-color: #fff;
     color: #000;
     line-height: 150%;
+    text-indent: 15px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    text-indent: 15px;
 }
 
-.user_profile:hover .dropdown_profile_menu {
-    visibility: visible;
+#user_profile:hover img {
+    box-shadow: 0px 0px 3px 3px #329ea5;
 }
 
-.dropdown_profile_menu li:hover {
+#user_profile:hover {
+    cursor: pointer;
+}
+
+#user_profile:active {
+    cursor: default;
+}
+
+#dropdown_profile_menu li:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#dropdown_profile_menu li:hover {
+    margin-left: 5px;
+    text-indent: 10px;
+    
     box-shadow: -5px 0px 0px 0px #329ea5;
     background-color: #3bb4bc;
     color: #ffffff;
 }
 
 /* Нотификации/уведомления */
-.notifications {
+#notifications {
     position: static;
     margin-left: 207px;
     margin-top: 20px;
@@ -176,16 +201,20 @@ a {
     height: 20px;
 }
 
-.notifications img {
+#notifications img {
     width: 20px;
 }
 
-.notifications img:hover, .notifications img:focus {
+#notifications img:hover, #notifications img:focus {
     animation: bellshake .5s cubic-bezier(.36,.07,.19,.97) both;
     backface-visibility: hidden;
     transform-origin: top right;
+    cursor: pointer;
  }
 
+#notifications img:active {
+    cursor: default;
+}
 
 @keyframes bellshake {
   0% { transform: rotate(0); }
@@ -199,7 +228,7 @@ a {
   100% { transform: rotate(0); }
 }
 
-.count_of_notifications {
+#count_of_notifications {
     position: absolute;
     width: 13px;
     text-align: center;
@@ -213,7 +242,7 @@ a {
 }
 
 /* Контент нотификаций */
-.notifications_content {
+#notifications_content {
     position: absolute;
     left: 1px;
     width: 99.5%;
@@ -222,7 +251,7 @@ a {
     visibility: hidden;
 }
 
-.notifications_content:after, .notifications_content:before {
+#notifications_content:after, #notifications_content:before {
     position: absolute;
     bottom: 100%;
     left: 217px;
@@ -233,13 +262,121 @@ a {
     pointer-events: none;
 }
 
-.notifications_content:after {
+#notifications_content:after {
     border-color: rgba(238, 238, 238, 0);
     border-bottom-color: #cbe6e6;
     border-width: 12px;
     margin-left: -12px;
 }
-.notifications_content:before {
+#notifications_content:before {
+    border-color: rgba(204, 204, 204, 0);
+    border-bottom-color: #cccccc;
+    border-width: 13px;
+    margin-left: -13px;
+}
+
+/* Сообщения чата */
+#messages_box {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 410px;
+    width: 100%;
+    color: red;
+}
+
+.chat_message {
+    background-color: #191e23;
+    margin-left: auto;
+    margin-right: auto;
+    width: 99%;
+    height: 200px;
+    margin-top: 2px;
+}
+
+.chat_profile_info {
+    float: left;
+    width: 80%;
+    height: 38px;
+    margin-top: 19px;
+    margin-bottom: 23px;
+    margin-left: 5%;
+    color: #c0cccc;
+    line-height: 350%;
+}
+
+.chat_profile_info img {
+    float: left;
+    width: 38px;
+    height: 38px;
+    margin-right: 18px;
+    border-radius: 55px;
+}
+
+.chat_message_time {
+    float: right;
+    margin-right: 5%;
+    padding-top: 36px;
+    color: #5b646c;
+}
+
+.chat_text {
+    text-align: justify;
+    clear: both;
+    color: #d1d2d3;
+    margin-left: 5%;
+    margin-right: 5%
+}
+
+/* Бокс для отправки сообщений */
+#message_sender_box {
+    position: relative;
+    width: 100%;
+    height: 182px;
+    background-color: #0e1214;
+}
+
+#message_sender_box {
+    color: #3bb4bc;
+    padding-top: 31px;
+}
+
+#message_sender_box input {
+    color: #c0cccc;
+    background-color: #0e1214;
+}
+
+#message_sender_box  #recipient, #message_to_send {
+    width: 250px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#message_sender_box textarea {
+    resize: none;
+    color: #848687;
+    background-color: #0e1214;
+}
+
+#message_sender_box:after, #message_sender_box:before {
+    position: absolute;
+    bottom: 100%;
+    left: 157px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    pointer-events: none;
+}
+
+#message_sender_box:after {
+    border-color: rgba(238, 238, 238, 0);
+    border-bottom-color: #0e1214;
+    border-width: 12px;
+    margin-left: -12px;
+}
+
+#message_sender_box:before {
     border-color: rgba(204, 204, 204, 0);
     border-bottom-color: #cccccc;
     border-width: 13px;
