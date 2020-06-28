@@ -1,32 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 /* Настройка основных блоков */
 .container{
-    position: relative;
-    background-color: blue;
-    height: calc(100vh - 15px);
+    max-width: 1480px;
+    min-width: 1157px;
+    margin: 0 auto;
 }
 
 .left_side_window {
     float: left;
     background-color: #0e1214;
-    width: 18%;
+    width: 14.48%;
+    min-height: 400px;
     height: calc(100vh - 40px);
     border-top: 8px solid #3bb4bc;
 }
 
-.right_bar {
-    float: right;
-    width: 20%;
-    height: 100px;
-    background-color: #191e23;
-    height: calc(100vh - 94px);
+.top_menu_bar {
+    overflow: hidden;
+    float: left;
+    width: 65%;
+    min-height: 62px;
+    background-color: #ffffff;
+}
+
+.profile_menu_bar {
+    overflow: hidden;
+    width: 20.52%;
+    background-color: #ffffff;
+    min-height: 62px;
 }
 
 .content_block {
     float: left;
-    height: 100px;
-    width: 62%;
-    background-color: aquamarine;/* #ffffff;*/
-    height: calc(100vh - 94px);
+    width: 65%;
+    background-color: ffffff;
 }
 
 .content_block .top_pictures_bar {
@@ -40,25 +51,19 @@
 .content_block .content {
     overflow: scroll;
     overflow-x: hidden;
+    min-height: 106px;
     height: calc(100vh - 334px);
     width: 100%;
     background-color: #ffffff;
     color: #8c8c8c;
 }
 
-.top_menu_bar {
-    overflow: hidden;
-    float: left;
-    left: 18%;
-    width: 62%;
-    height: 62px;
-    background-color: #ffffff;
-}
-
-.profile_menu_bar {
-    overflow: hidden;
-    background-color: #ffffff;
-    height: 62px;
+.right_bar {
+    float: right;
+    width: 20.52%;
+    background-color: #191e23;
+    min-height: 346px;
+    height: calc(100vh - 94px);
 }
 
 .footer {
@@ -138,17 +143,18 @@ a {
 
 /* Выпадающий список меню профиля */
 .dropdown_profile_menu {
-    visibility: hidden;
-}
-
-.user_profile:hover .dropdown_profile_menu {
     position: absolute;
-    visibility: visible;
+    z-index: 1;
+    visibility: hidden;
     margin-top: -1px;
     background-color: #fff;
     color: #000;
     line-height: 200%;
     text-indent: 15px;
+}
+
+.user_profile:hover .dropdown_profile_menu {
+    visibility: visible;
 }
 
 .dropdown_profile_menu li:hover {
@@ -207,10 +213,35 @@ a {
 /* Контент нотификаций */
 .notifications_content {
     position: absolute;
+    z-index: 0;
     margin-top: 42px;
     margin-left: -210px;
     width: 300px;
     height: 340px;
     background-color: #eff7f8;
     visibility: hidden;
+}
+
+.notifications_content:after, .notifications_content:before {
+    position: absolute;
+    bottom: 100%;
+    right: 77px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    pointer-events: none;
+}
+
+.notifications_content:after {
+    border-color: rgba(238, 238, 238, 0);
+    border-bottom-color: #cbe6e6;
+    border-width: 12px;
+    margin-left: -12px;
+}
+.notifications_content:before {
+    border-color: rgba(204, 204, 204, 0);
+    border-bottom-color: #cccccc;
+    border-width: 13px;
+    margin-left: -13px;
 }
