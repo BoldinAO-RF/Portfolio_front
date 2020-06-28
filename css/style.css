@@ -21,9 +21,10 @@
 
 #left_side_window {
     float: left;
+    position: relative;
     background-color: #0e1214;
     width: 14.48%;
-    min-height: 400px;
+    min-height: 650px;
     height: calc(100vh - 40px);
     border-top: 8px solid #3bb4bc;
 }
@@ -60,10 +61,10 @@
 #content_block #content {
     overflow: scroll;
     overflow-x: hidden;
-    min-height: 106px;
+    min-height: 355.8px;
     height: calc(100vh - 334px);
     width: 100%;
-    background-color: #ffffff;
+    background-color: #fff;
     color: #8c8c8c;
 }
 
@@ -72,7 +73,7 @@
     position: relative;
     width: 20.52%;
     background-color: #0e1214;
-    min-height: 346px;
+    min-height: 596px;
     height: calc(100vh - 94px);
 }
 
@@ -95,7 +96,7 @@ a {
 }
 
 /* Стилизация списков левого меню */
-#left_side_menu, #dropdown_profile_menu, #profile_photo, #profile {
+#left_side_menu, #dropdown_profile_menu, #profile_photo, #profile, li {
     list-style-type: none;
 }
 
@@ -289,7 +290,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     width: 99%;
-    height: 200px;
+    min-height: 200px;
     margin-top: 2px;
 }
 
@@ -331,18 +332,19 @@ a {
 #message_sender_box {
     position: relative;
     width: 100%;
-    height: 182px;
     background-color: #0e1214;
 }
 
 #message_sender_box {
     color: #3bb4bc;
     padding-top: 31px;
+    min-height: 50px;
 }
 
 #message_sender_box input {
     color: #c0cccc;
     background-color: #0e1214;
+    width: 150px;
 }
 
 #message_sender_box  #recipient, #message_to_send {
@@ -350,6 +352,7 @@ a {
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 10px;
 }
 
 #message_sender_box textarea {
@@ -381,4 +384,54 @@ a {
     border-bottom-color: #cccccc;
     border-width: 13px;
     margin-left: -13px;
+}
+
+/* Личные контакты */
+#facebook, #vk {
+    float: left;
+    margin-right: 15px;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 140%;
+    background-color: silver;
+    box-shadow: 0px 0px 4px 4px #329ea5;
+}
+
+#personal_sites {
+    position: absolute;
+	bottom: 20px;
+    left: 30%;
+    right: 0%;
+}
+
+#facebook:hover, #vk:hover, #facebook:focus, vk:focus {
+    animation: spin .6s cubic-bezier(.36,.07,.19,.97) both;
+    backface-visibility: hidden;
+    transform-origin: center;
+    cursor: pointer;
+ }
+
+#facebook:active, #vk:active {
+    cursor: default;
+    box-shadow: 0px 0px 4px 4px #f00;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0); }
+  8% { transform: rotate(30deg); }
+  16% { transform: rotate(60deg); }
+  24% { transform: rotate(90deg); }
+  32% { transform: rotate(120deg); }
+  40% { transform: rotate(150deg); }
+  48% { transform: rotate(180deg); }
+  56% { transform: rotate(210deg); }
+  64% { transform: rotate(240deg); }
+  72% { transform: rotate(270deg); }
+  80% { transform: rotate(300deg); }
+  88% { transform: rotate(330deg); }
+  96% { transform: rotate(350deg); }
+  100% { transform: rotate(0); }
 }
