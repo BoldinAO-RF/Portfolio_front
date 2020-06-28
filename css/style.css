@@ -60,6 +60,7 @@
 
 .right_bar {
     float: right;
+    position: relative;
     width: 20.52%;
     background-color: #191e23;
     min-height: 346px;
@@ -213,10 +214,8 @@ a {
 /* Контент нотификаций */
 .notifications_content {
     position: absolute;
-    z-index: 0;
-    margin-top: 42px;
-    margin-left: -210px;
-    width: 300px;
+    left: 1px;
+    width: 99.5%;
     height: 340px;
     background-color: #eff7f8;
     visibility: hidden;
@@ -225,7 +224,7 @@ a {
 .notifications_content:after, .notifications_content:before {
     position: absolute;
     bottom: 100%;
-    right: 77px;
+    left: 217px;
     border: solid transparent;
     content: " ";
     height: 0;
