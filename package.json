@@ -1,0 +1,32 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "ajax": "0.0.4",
+    "jquery": "^3.5.1",
+    "system": "^2.0.1",
+    "ts-serializable": "^2.0.19",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.0",
+    "webpack-system-register": "^1.6.0"
+  },
+  "scripts": {
+    "clean": "rm -rf js node_modules",
+    "build": "npm install && npm install @types/jquery --save-dev && tsc",
+    "tsc": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoldinAO-RF/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BoldinAO-RF/Portfolio/issues"
+  },
+  "homepage": "https://github.com/BoldinAO-RF/Portfolio#readme"
+}

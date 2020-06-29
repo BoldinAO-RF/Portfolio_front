@@ -1,0 +1,7 @@
+{
+    "api": {
+        "postMessage": "https://jsonplaceholder.typicode.com/posts",
+        "getMessage": "https://jsonplaceholder.typicode.com/todos/1"
+    },
+    "versionFront": "1.0.0"
+}
