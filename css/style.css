@@ -4,7 +4,7 @@
 }
 
 /* Стилизация скроллов */
-::-webkit-scrollbar { width: 8px; height: 3px;}
+::-webkit-scrollbar { width: 10px; height: 18px;}
 ::-webkit-scrollbar-button {  background-color: #666; }
 ::-webkit-scrollbar-track {  background-color: #999;}
 ::-webkit-scrollbar-track-piece { background-color: #3bb4bc;}
@@ -152,6 +152,10 @@ a {
     border-radius: 40px;
 }
 
+#user_profile:hover img {
+    box-shadow: 0px 0px 3px 3px #329ea5;
+}
+
 /* Выпадающий список меню профиля */
 #dropdown_profile_menu {
     position: absolute;
@@ -165,10 +169,6 @@ a {
     text-indent: 15px;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-}
-
-#user_profile:hover img {
-    box-shadow: 0px 0px 3px 3px #329ea5;
 }
 
 #user_profile:hover {
@@ -292,6 +292,7 @@ a {
     width: 99%;
     min-height: 110px;
     margin-top: 2px;
+    word-wrap: break-word;
 }
 
 .chat_profile_info {
