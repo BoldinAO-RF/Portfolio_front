@@ -7,11 +7,37 @@ var profilePhoto;
 var chatMessageTime;
 var chatText;
 
+async function sendRequestAddMessage() {
+    $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        type: 'post',
+        data: JSON.stringify({
+            title: 'fooX',
+            body: 'sasasmbar1',
+            userId: 145620
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        },
+        dataType: 'json',
+        success: function (data) {
+            console.info(data);
+        }
+    });
+}
 
-$(function() {
-    $('body').on("keyup", messageBox, function(event){
-        if(event.keyCode == 13){
-            divMessage = document.createElement('div');
+async function getMessages() {
+    $.ajax({
+        type: 'get',
+        url: 'https://jsonplaceholder.typicode.com/todos/1',
+        function (data) {
+            console.log(data);
+        }
+    })
+}
+
+async function sendMessage() {
+    divMessage = document.createElement('div');
             divMessage.className = 'chat_message';
 
             boxForMessages.append(divMessage);
@@ -40,6 +66,14 @@ $(function() {
             chatText.className = 'chat_text';
             chatText.innerHTML = messageBox.val();
             messageBox.val('');
+}
+
+$(function() {
+    $('body').on("keyup", messageBox, async function(event){
+        if(event.keyCode == 13){
+            await getMessages();
+            await sendMessage();
+            await sendRequestAddMessage();
         }
     })
 });
