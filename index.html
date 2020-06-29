@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Portfolio</title>
     <link rel="stylesheet" href="css/style.css"> </head>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <body>
     <div class="container">
         <!-- Левое боковое меню -->
@@ -47,31 +47,14 @@
         <div id="right_bar" class="right bar">
             <div class="notifications content" id="notifications_content" visibility="visibble"></div>
             <div id="messages_box" class="messages box">
-                <div id="chat_message_1" class="chat_message">
-                    <div class="chat_profile_info">
-                    <img src="/img/logoProfileMan.png" alt="">Some Name</div>
-                    <div class="chat_message_time">8m</div>
-                    <div class="chat_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate suscipit aut, recusandae. Sequi nulla cumque hic doloribus, quia ad, provident a omnis voluptatum, similique, facere! Commodi nostrum tempore minus possimus?</div>
-                </div>
-                <div id="chat_message_2" class="chat_message">
-                <div class="chat_profile_info">
-                <img src="/img/logoProfileMan.png" alt="">Some Name</div>
-                <div class="chat_message_time">8m</div>
-                <div class="chat_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, nemo, debitis soluta cupiditate tenetur aperiam quasi dignissimos possimus ipsum eum, qui, excepturi praesentium enim doloribus esse. Cum doloremque, quo nemo.</div>
-            </div>
-            <div id="chat_message_2" class="chat_message">
-                <div class="chat_profile_info">
-                <img src="/img/logoProfileMan.png" alt="">Some Name</div>
-                <div class="chat_message_time">8m</div>
-                <div class="chat_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum, nemo, debitis soluta cupiditate tenetur aperiam quasi dignissimos possimus ipsum eum, qui, excepturi praesentium enim doloribus esse. Cum doloremque, quo nemo.</div>
-            </div>
+                
             </div>
             <div id="message_sender_box" class="message sender box">
                <div id="recipient" class="recipient">
                    Replying to <input type="text" id="recipient_message" class="recipient message" placeholder="Получатель" maxlength="10">
                </div>
                 <div id="message_to_send" class="message to send">
-                    <textarea rows="7" cols="30" placeholder="Начните ввод..." name="text" maxlength="230"></textarea>
+                    <textarea id="message_to_send_textarea" rows="7" cols="30" placeholder="Начните ввод..." name="text" maxlength="230"></textarea>
                 </div>
             </div>
         </div>
@@ -83,3 +66,4 @@
 
 <script src="js/notifications.js"></script>
 <script src="js/profile.js"></script>
+<script src="js/sender.js"></script>
