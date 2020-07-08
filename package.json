@@ -1,13 +1,16 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio",
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "ajax": "0.0.4",
     "jquery": "^3.5.1",
     "system": "^2.0.1",
+    "ts-json-serializer": "^1.2.4",
     "ts-serializable": "^2.0.19",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "typescript-deserializer": "^1.0.2"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.0",

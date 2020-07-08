@@ -1,24 +1,86 @@
-var boxForMessages = $('#messages_box');
-var messageBox = $('#message_to_send_textarea');
+import { Msg } from "./data/messageContract";
 
-var divMessage;
-var chatProfileInfo;
-var profilePhoto;
-var chatMessageTime;
-var chatText;
+var _urlPost, _urlGet;
 
-var urlPost, urlGet;
+export class Message {
+    private static _divMessage:any;
+    private static _chatProfileInfo:any;
+    private static _profilePhoto:any;
+    private static _chatMessageTime:any;
+    private static _chatText:any;
 
-class test {
+    private static _messageBox:JQuery;
+    private static _boxForMessages:JQuery;
+
+    public get boxForMessages() : JQuery {
+        return Message._boxForMessages;
+    }
+    
+    public get messageBox() : JQuery {
+        return Message._messageBox;
+    }
+    
 
     constructor() {
-        urlPost = 'https://jsonplaceholder.typicode.com/posts';
-        urlGet = 'https://jsonplaceholder.typicode.com/todos/1';
+        _urlPost = 'https://jsonplaceholder.typicode.com/posts';
+        _urlGet = 'https://localhost:32768/api/Message';
+
+        Message._boxForMessages = $('#messages_box');
+        Message._messageBox = $('#message_to_send_textarea')
     }
 
-    sendRequestAddMessage() {
+    public static addMessageToFront(text:string, fullNameUser:string) {
+        Message._divMessage = document.createElement('div');
+        Message._divMessage.className = 'chat_message';
+
+        Message._boxForMessages.append(Message._divMessage);
+
+        Message._chatProfileInfo = document.createElement('div');
+        Message._chatProfileInfo.className = 'chat_profile_info';
+
+        Message._divMessage.append(Message._chatProfileInfo);
+
+        Message._chatProfileInfo.innerHTML = fullNameUser;
+        Message._profilePhoto = document.createElement('img');
+        Message._profilePhoto.src = './img/logoProfileMan.png';
+
+        Message._chatProfileInfo.append(Message._profilePhoto);
+
+        Message._chatMessageTime = document.createElement('div');
+        Message._chatMessageTime.className = 'chat_message_time';
+
+        Message._divMessage.append(Message._chatMessageTime);
+
+        Message._chatMessageTime.innerHTML = '8m';
+
+        Message._chatText = document.createElement('div');
+        Message._divMessage.append(Message._chatText);
+
+        Message._chatText.className = 'chat_text';
+        Message._chatText.innerHTML = text;
+    }
+
+    public static getMessages() {
         $.ajax({
-            url: urlPost,
+            type: 'get',
+            url: _urlGet,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                const deserialized:Msg[] = jQuery.extend(true, [], msg);
+                deserialized.forEach(element => {
+                    Message.addMessageToFront(element.messageText, element.userFullName);
+                });
+            },
+            error: function (req, status, error) {
+                console.log(req, status, error);
+            }
+        })
+    }
+    
+    public static sendRequestAddMessage() {
+        $.ajax({
+            url: _urlPost,
             type: 'post',
             data: JSON.stringify({
                 title: 'fooX',
@@ -33,57 +95,18 @@ class test {
                 console.info(data);
             }
         });
-    }
-
-    getMessages() {
-        $.ajax({
-            type: 'get',
-            url: urlGet,
-        }).then((data) => {
-            console.log(data);
-        })
-    }
-
-    sendMessage() {
-        divMessage = document.createElement('div');
-        divMessage.className = 'chat_message';
-
-        boxForMessages.append(divMessage);
-
-        chatProfileInfo = document.createElement('div');
-        chatProfileInfo.className = 'chat_profile_info';
-
-        divMessage.append(chatProfileInfo);
-
-        chatProfileInfo.innerHTML = 'Some Name';
-        profilePhoto = document.createElement('img');
-        profilePhoto.src = './img/logoProfileMan.png';
-
-        chatProfileInfo.append(profilePhoto);
-
-        chatMessageTime = document.createElement('div');
-        chatMessageTime.className = 'chat_message_time';
-
-        divMessage.append(chatMessageTime);
-
-        chatMessageTime.innerHTML = '8m';
-
-        chatText = document.createElement('div');
-        divMessage.append(chatText);
-
-        chatText.className = 'chat_text';
-        chatText.innerHTML = messageBox.val();
-        messageBox.val('');
+        // Message.addMessageToFront(Message._messageBox.val().toString());
+        Message._messageBox.val('');
     }
 }
 
+var message = new Message();
+
 $(() => {
-    $('body').on("keyup", messageBox, (event) => {
+    Message.getMessages();
+    $('body').on("keyup", message.messageBox, (event) => {
         if (event.keyCode == 13) {
-            var s = new test();
-            s.getMessages();
-            s.sendMessage();
-            s.sendRequestAddMessage();
+            Message.sendRequestAddMessage();
         }
     })
 });
